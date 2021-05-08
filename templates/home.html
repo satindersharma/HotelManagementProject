@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} DashBoard {% endblock title %} 
+{% block base_css %}
+{{block.super}}
+{% endblock base_css %}
+{% block breadcrumbbar %}
+<div class="breadcrumbbar bg-transparent ">
+
+</div>
+{% endblock breadcrumbbar %}
+
+
+<!-- End Contentbar -->
+{% block content %}
+<div class="container-fluid mt-5">
+
+    <div class="row pt-4">
+        
+
+  
+<!-- Start col -->
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <a href="{% url 'roomapp:BookingFormView' %}">
+                        <div class="card text-white bg-secondary m-b-30">
+                            <div class="card-body">
+                                <h2 class="card-title text-white">Book a Room</h2>
+                                
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                                            <a href="{% url 'roomapp:BookingListView' %}">
+                        <div class="card text-white bg-secondary m-b-30">
+                            <div class="card-body">
+                                <h2 class="card-title text-white">Booking List</h2>
+                                
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <!-- End col -->
+                    <!-- Start col -->
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                    </div>
+                    <!-- End col -->
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

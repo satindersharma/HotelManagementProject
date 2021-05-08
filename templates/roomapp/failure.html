@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} Thanks for the order {% endblock title %} 
+{% block base_css %}
+{{block.super}}
+{% endblock base_css %}
+{% block breadcrumbbar %}
+<div class="breadcrumbbar bg-transparent ">
+
+</div>
+{% endblock breadcrumbbar %}
+
+
+<!-- End Contentbar -->
+{% block content %}
+<div class="container-fluid mt-5">
+  <section>
+    <p>
+failed : : {{error}}      <a href="mailto:orders@example.com">orders@example.com</a>.
+    </p>
+  </section>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

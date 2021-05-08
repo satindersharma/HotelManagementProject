@@ -1,0 +1,76 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} Marina Beach {% endblock title %} 
+{% block base_css %}
+{{block.super}}
+{% endblock base_css %}
+{% block breadcrumbbar %}
+<div class="breadcrumbbar bg-transparent ">
+
+</div>
+{% endblock breadcrumbbar %}
+
+
+<!-- End Contentbar -->
+{% block content %}
+<div class="container-fluid mt-5">
+    <div class="row text-center">
+      <div class="col-12">
+    
+      <div class="headings m-4">
+        <h1>Marina Beach</h1>
+        <h1>Hotel</h1>
+      </div>
+      </div>
+      </div>
+          <div class="row text-center">
+      <div class="mx-auto col-6">
+
+          <form method="POST"
+          class="search-form m-0 container"
+          action=""
+        >
+        {% csrf_token %}
+
+
+        
+        <div class="form-row">
+
+
+        {% include 'form_repeat.html' with f=form.check_in f_label="Check In" col_md="6" %}
+
+
+         {% include 'form_repeat.html' with f=form.check_out f_label="Check Out" col_md="6" %}
+         </div>
+         
+        <div class="form-row">
+
+
+        {% include 'form_repeat.html' with f=form.adults f_label="Adults" col_md="6" %}
+
+
+         {% include 'form_repeat.html' with f=form.children f_label="Children" col_md="6" %}
+         </div>
+
+         <div class="form-row">
+         {% include 'form_repeat.html' with f=form.room_category f_label="Room Category" col_md="12" %}
+         </div>
+
+          <div class="form-group row mw-50 m-2">
+            <button class="btn btn-primary col-12  mw-50 " type="submit">
+              Find Room
+            </button>
+          </div>
+          </form>
+
+        
+      </div>
+    
+      </div>
+    
+    </div>
+  </div>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

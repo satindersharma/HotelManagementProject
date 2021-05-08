@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+{% load static i18n %}
+{% block title %}Simple Checkout Demonstration for Hotel Management System{% endblock title %} 
+{% block base_css %}
+{{block.super}}
+
+{% endblock base_css %}
+
+{% block breadcrumbbar %}
+<div class="breadcrumbbar bg-transparent ">
+
+</div>
+{% endblock breadcrumbbar %}
+
+
+<!-- End Contentbar -->
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-12" style="background-image: url('{% static 'allauth/images/bg-01.jpg'%}');">
+          <form method="POST" action="">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+          <div class="form-row text-center">
+          <div class="col">
+          <h1 >
+                        {% trans 'Just Name and Email'%}
+                      </h1>
+          </div>
+                      
+            </div>
+                              
+                              
+        <div class="form-row">
+
+        {% include 'form_repeat.html' with f=form.name f_label="Name" col_md="6" %}
+
+
+         {% include 'form_repeat.html' with f=form.email f_label="Email" col_md="6" %}
+         </div>
+
+            <div class="form-row">
+            <div class="col-10 mx-auto">
+                          <button type="submit" class="btn btn-primary col-12  mw-50">
+                {% trans 'Checkout' %}
+              </button>
+              </div>
+         </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="dropDownSelect1"></div>
+    </div>
+    
+{% endblock content %}
+
+{% block javascript %}
+<!--===============================================================================================-->
+    <script src="{% static 'allauth/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'allauth/vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'allauth/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'allauth/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'allauth/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'allauth/vendor/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'allauth/vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'allauth/vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--===============================================================================================-->
+    <!-- <script src="{% static 'allauth/js/main.js' %}"></script>    -->
+{% endblock javascript %}

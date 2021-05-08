@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} Checkout confirmation {% endblock title %} 
+{% block base_css %}
+{{block.super}}
+{% endblock base_css %}
+{% block breadcrumbbar %}
+<div class="breadcrumbbar bg-transparent ">
+
+</div>
+{% endblock breadcrumbbar %}
+
+
+<!-- End Contentbar -->
+{% block content %}
+<div class="container-fluid mt-5">
+
+
+
+                    <!-- Start col -->
+                    <div class=" pt-4 offset-2 col-md-8 col-lg-8 col-xl-6">
+                        <div class="card text-white bg-success m-b-30 text-center">
+                            <div class="card-header">
+                            <h1>Are you sure to checkout?</h1>
+                            </div>
+                            <div class="card-body">
+                            <form action="{% url 'roomapp:CheckoutConfirmView' %}" method="post">
+                              {% csrf_token %}
+                                <h5 class="card-title text-white">Booking Details</h5>
+                                    <div class="booking-details">
+                                    <h6>Name: {{person.name}}</h6>
+                                    <h6>Email: {{person.email}}</h6>
+                                    <h6>Total Amount: {{amount}}</h6>
+                                    <h6>{{room_name}} Suite</h6>
+                                    <h6>Check In : {{check_in}}</h6>
+                                    <h6>Check Out : {{check_out}}</h6>
+                                    <div class="form-row">
+                                          <div class="col-6">
+                                        <a href="{% url 'roomapp:cancel_view' %}" class="btn btn-warning col-12  mw-50" >Cancel</a>
+                                        </div>
+                                        <div class="col-6">
+                                        <button class="btn btn-primary col-12  mw-50" type="submit">Checkout</button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                            </form>
+                            </div>
+                        </div> 
+                    </div>
+                    <!-- End col -->
+
+
+
+    
+  </div>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

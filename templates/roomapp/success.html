@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} Thanks for Booking! {% endblock title %} 
+{% block base_css %}
+{{block.super}}
+{% endblock base_css %}
+{% block breadcrumbbar %}
+<div class="breadcrumbbar bg-transparent ">
+
+</div>
+{% endblock breadcrumbbar %}
+
+
+<!-- End Contentbar -->
+{% block content %}
+<div class="container mt-5">
+  <div class="row pt-4">
+    <div class="col">
+      <div class="card text-white bg-success m-b-30 text-center">
+                            <div class="card-header">
+                            <h1>Booking successful</h1>
+                            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}
