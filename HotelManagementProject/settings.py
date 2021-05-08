@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'users',
-    # 'hotel',
     'roomapp',
 ]
 
@@ -135,7 +134,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static",BASE_DIR / "hotel/static/hotel"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / 'static_cdn'
 
 MEDIA_URL = '/media/'
